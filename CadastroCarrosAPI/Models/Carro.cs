@@ -1,11 +1,9 @@
-namespace CadastroCarrosAPI.Models
+namespace CadastroCarrosAPI.Models;
+
+public class Carro
 {
-    public class Carro
-    {
-        public int Id { get; set; }
-        public string Modelo { get; set; }
-        public string Marca { get; set; }
-        public int Ano { get; set; }
-        public string Placa { get; set; }
-    }
+    public int Id { get; set; }
+    public string Marca { get; set; } = string.Empty;
+    public string Modelo { get; set; } = string.Empty;
+    public int Ano { get; set; }
 }

@@ -1,41 +1,64 @@
-using CadastroCarrosAPI.Data;
-using CadastroCarrosAPI.Endpoints;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 using CadastroCarrosAPI.Models;
-using Microsoft.EntityFrameworkCore;
+using CadastroCarrosAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=carros.db"));
+builder.Services.AddSingleton<CarroRepository>();
 
 var app = builder.Build();
 
-app.MapGetAllCarros();
-app.MapGetCarroById();
-app.MapPostCarro();
-app.MapDeleteCarro();
+app.MapGet("/", () => "API de Cadastro de Carros");
 
-using (var scope = app.Services.CreateScope())
+app.MapGet("/carros", (CarroRepository repo) => repo.GetAll());
+
+app.MapGet("/carros/{id}", (int id, CarroRepository repo) =>
 {
-    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-    db.Database.EnsureCreated();
+    var carro = repo.GetById(id);
+    return carro is not null ? Results.Ok(carro) : Results.NotFound();
+});
 
-    if (!db.Carros.Any())
+app.MapPost("/carros", (Carro carro, CarroRepository repo) =>
+{
+    repo.Add(carro);
+    return Results.Created($"/carros/{carro.Id}", carro);
+});
+
+app.MapPut("/carros/{id}", (int id, Carro carroAtualizado, CarroRepository repo) =>
+{
+    var sucesso = repo.Update(id, carroAtualizado);
+    return sucesso ? Results.Ok(carroAtualizado) : Results.NotFound();
+});
+
+app.MapDelete("/carros/{id}", (int id, CarroRepository repo) =>
+{
+    var sucesso = repo.Delete(id);
+    return sucesso ? Results.NoContent() : Results.NotFound();
+});
+
+app.Run();
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
     {
-        db.Carros.AddRange(
-            new Carro { Modelo = "Onix", Marca = "Chevrolet", Ano = 2020, Placa = "ABC1234" },
-            new Carro { Modelo = "Gol", Marca = "Volkswagen", Ano = 2019, Placa = "DEF5678" },
-            new Carro { Modelo = "HB20", Marca = "Hyundai", Ano = 2021, Placa = "GHI9012" },
-            new Carro { Modelo = "Corolla", Marca = "Toyota", Ano = 2018, Placa = "JKL3456" },
-            new Carro { Modelo = "Civic", Marca = "Honda", Ano = 2022, Placa = "MNO7890" },
-            new Carro { Modelo = "Uno", Marca = "Fiat", Ano = 2017, Placa = "PQR2345" },
-            new Carro { Modelo = "Ka", Marca = "Ford", Ano = 2016, Placa = "STU6789" },
-            new Carro { Modelo = "Sandero", Marca = "Renault", Ano = 2020, Placa = "VWX1122" },
-            new Carro { Modelo = "Compass", Marca = "Jeep", Ano = 2023, Placa = "YZA3344" },
-            new Carro { Modelo = "Cruze", Marca = "Chevrolet", Ano = 2021, Placa = "BCD5566" }
-        );
-        db.SaveChanges();
-    }
-}
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+var app = builder.Build();
+
+app.UseCors("AllowAll");
+
+// Mapeamentos da API
+app.MapGet("/", () => "API de Cadastro de Carros");
+
+// Exemplo:
+app.MapGet("/carros", ...);
+app.MapPost("/carros", ...);
 
 app.Run();

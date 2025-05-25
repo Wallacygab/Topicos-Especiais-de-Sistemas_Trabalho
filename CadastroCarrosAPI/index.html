@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cadastro de Carros</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    input, button { margin: 5px; }
+    table { width: 100%; margin-top: 10px; border-collapse: collapse; }
+    td, th { padding: 8px; border: 1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <h1>Cadastro de Carros</h1>
+  <div>
+    <input type="text" id="marca" placeholder="Marca" />
+    <input type="text" id="modelo" placeholder="Modelo" />
+    <input type="number" id="ano" placeholder="Ano" />
+    <button onclick="adicionarCarro()">Adicionar</button>
+  </div>
+
+  <input type="text" id="busca" placeholder="Buscar por modelo" oninput="carregarCarros()" />
+
+  <table>
+    <thead>
+      <tr><th>ID</th><th>Marca</th><th>Modelo</th><th>Ano</th><th>Ações</th></tr>
+    </thead>
+    <tbody id="tabela-carros"></tbody>
+  </table>
+
+  <script>
+    const apiUrl = 'http://localhost:5196';
+
+    async function carregarCarros() {
+      const resposta = await fetch(`${apiUrl}/carros`);
+      let carros = await resposta.json();
+      const busca = document.getElementById("busca").value.toLowerCase();
+      if (busca) {
+        carros = carros.filter(c => c.modelo.toLowerCase().includes(busca));
+      }
+
+      const tabela = document.getElementById("tabela-carros");
+      tabela.innerHTML = "";
+      carros.forEach(carro => {
+        tabela.innerHTML += `
+          <tr>
+            <td>${carro.id}</td>
+            <td>${carro.marca}</td>
+            <td>${carro.modelo}</td>
+            <td>${carro.ano}</td>
+            <td>
+              <button onclick="removerCarro(${carro.id})">Remover</button>
+            </td>
+          </tr>`;
+      });
+    }
+
+    async function adicionarCarro() {
+      const marca = document.getElementById("marca").value;
+      const modelo = document.getElementById("modelo").value;
+      const ano = parseInt(document.getElementById("ano").value);
+
+      await fetch(`${apiUrl}/carros`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ marca, modelo, ano })
+      });
+
+      document.getElementById("marca").value = "";
+      document.getElementById("modelo").value = "";
+      document.getElementById("ano").value = "";
+      carregarCarros();
+    }
+
+    async function removerCarro(id) {
+      await fetch(`${apiUrl}/carros/${id}`, { method: "DELETE" });
+      carregarCarros();
+    }
+
+    carregarCarros();
+  </script>
+</body>
+</html>
