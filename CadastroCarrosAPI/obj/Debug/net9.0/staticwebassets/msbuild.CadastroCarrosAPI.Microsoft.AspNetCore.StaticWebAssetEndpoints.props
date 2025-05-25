@@ -1,0 +1,28 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/CadastroCarrosAPI/codigos.a1cpa6ij63.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\codigos.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"a1cpa6ij63"},{"Name":"integrity","Value":"sha256-LgtCFWr0i10lss7W/GwoQ0RbhAY/a87P\u002BBOdOXUYHdA="},{"Name":"label","Value":"_content/CadastroCarrosAPI/codigos.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"788"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022LgtCFWr0i10lss7W/GwoQ0RbhAY/a87P\u002BBOdOXUYHdA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 25 May 2025 17:12:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CadastroCarrosAPI/codigos.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\codigos.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-LgtCFWr0i10lss7W/GwoQ0RbhAY/a87P\u002BBOdOXUYHdA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"788"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022LgtCFWr0i10lss7W/GwoQ0RbhAY/a87P\u002BBOdOXUYHdA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 25 May 2025 17:12:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CadastroCarrosAPI/index.3msl0sb10p.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"3msl0sb10p"},{"Name":"integrity","Value":"sha256-5ZsugYnDD8\u002BdX9d/D6qf2JsvwCHdjc/cK9e9AbyDg3w="},{"Name":"label","Value":"_content/CadastroCarrosAPI/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4008"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00225ZsugYnDD8\u002BdX9d/D6qf2JsvwCHdjc/cK9e9AbyDg3w=\u0022"},{"Name":"Last-Modified","Value":"Sun, 25 May 2025 17:12:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CadastroCarrosAPI/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5ZsugYnDD8\u002BdX9d/D6qf2JsvwCHdjc/cK9e9AbyDg3w="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4008"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u00225ZsugYnDD8\u002BdX9d/D6qf2JsvwCHdjc/cK9e9AbyDg3w=\u0022"},{"Name":"Last-Modified","Value":"Sun, 25 May 2025 17:12:35 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

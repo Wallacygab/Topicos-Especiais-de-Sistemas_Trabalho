@@ -1114,19 +1114,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sleep\\.nuget\\packages\\": {}
+    "C:\\Users\\Lucas\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sleep\\Desktop\\CadastroVeiculoAPI\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Lucas\\CSHARP_PLACAS\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
       "projectName": "CadastroCarrosAPI",
-      "projectPath": "C:\\Users\\sleep\\Desktop\\CadastroVeiculoAPI\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
-      "packagesPath": "C:\\Users\\sleep\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sleep\\Desktop\\CadastroVeiculoAPI\\CadastroCarrosAPI\\obj\\",
+      "projectPath": "C:\\Users\\Lucas\\CSHARP_PLACAS\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
+      "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Lucas\\CSHARP_PLACAS\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sleep\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"

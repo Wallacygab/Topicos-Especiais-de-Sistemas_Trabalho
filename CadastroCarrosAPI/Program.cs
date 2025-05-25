@@ -4,10 +4,31 @@ using CadastroCarrosAPI.Models;
 using CadastroCarrosAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Registrar repositório
 builder.Services.AddSingleton<CarroRepository>();
+
+// Configurar CORS para liberar acesso do frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
 var app = builder.Build();
 
+// Usar CORS
+app.UseCors("AllowAll");
+
+// Serve arquivos estáticos da wwwroot e index.html por padrão
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+// Rotas da API
 app.MapGet("/", () => "API de Cadastro de Carros");
 
 app.MapGet("/carros", (CarroRepository repo) => repo.GetAll());
@@ -35,30 +56,5 @@ app.MapDelete("/carros/{id}", (int id, CarroRepository repo) =>
     var sucesso = repo.Delete(id);
     return sucesso ? Results.NoContent() : Results.NotFound();
 });
-
-app.Run();
-
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", policy =>
-    {
-        policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader();
-    });
-});
-
-var app = builder.Build();
-
-app.UseCors("AllowAll");
-
-// Mapeamentos da API
-app.MapGet("/", () => "API de Cadastro de Carros");
-
-// Exemplo:
-app.MapGet("/carros", ...);
-app.MapPost("/carros", ...);
 
 app.Run();
