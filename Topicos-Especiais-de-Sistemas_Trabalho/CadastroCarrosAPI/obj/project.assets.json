@@ -1114,11 +1114,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD:Topicos-Especiais-de-Sistemas_Trabalho/CadastroCarrosAPI/obj/project.assets.json
     "C:\\Users\\vinic\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\guilh\\.nuget\\packages\\": {}
+>>>>>>> fcbd9e398ad35a11628b503b1f4dee6657327ced:CadastroCarrosAPI/obj/project.assets.json
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD:Topicos-Especiais-de-Sistemas_Trabalho/CadastroCarrosAPI/obj/project.assets.json
       "projectUniqueName": "C:\\Users\\vinic\\Downloads\\Topicos-Especiais-de-Sistemas_Trabalho\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
       "projectName": "CadastroCarrosAPI",
       "projectPath": "C:\\Users\\vinic\\Downloads\\Topicos-Especiais-de-Sistemas_Trabalho\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
@@ -1127,6 +1132,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vinic\\AppData\\Roaming\\NuGet\\NuGet.Config"
+=======
+      "projectUniqueName": "C:\\Users\\guilh\\Documents\\GitHub\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
+      "projectName": "CadastroCarrosAPI",
+      "projectPath": "C:\\Users\\guilh\\Documents\\GitHub\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\CadastroCarrosAPI.csproj",
+      "packagesPath": "C:\\Users\\guilh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\guilh\\Documents\\GitHub\\Topicos-Especiais-de-Sistemas_Trabalho\\CadastroCarrosAPI\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\guilh\\AppData\\Roaming\\NuGet\\NuGet.Config"
+>>>>>>> fcbd9e398ad35a11628b503b1f4dee6657327ced:CadastroCarrosAPI/obj/project.assets.json
       ],
       "originalTargetFrameworks": [
         "net9.0"
