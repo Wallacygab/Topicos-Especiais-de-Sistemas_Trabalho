@@ -1,0 +1,159 @@
+/* Fundo e layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url('../img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: brightness(0.6);
+  color: #fff;
+
+  /* Centralização com Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Títulos */
+h1, h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.95);
+  color: #333;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+thead th {
+  background-color: #222;
+  color: #fff;
+  padding: 12px;
+}
+
+tbody td {
+  padding: 10px;
+  text-align: center;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Formulário */
+.form-section {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 8px;
+  color: #000;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+form input {
+  padding: 10px;
+  flex: 1 1 180px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Botões */
+.btn-add {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex: 1 1 100px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #218838;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.input-with-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
+
+/* Estilos para a célula de ações */
+.actions-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+}
+
+.delete-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.delete-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Campos com ícone */
+.input-with-icon {
+  position: relative;
+  display: inline-block;
+  flex: 1 1 180px;
+}
+
+.input-with-icon .input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+}
